@@ -69,8 +69,10 @@ def test_create_kit_numbers_in_name_get_succes_response():
 # Prueba 8. Creación de un kit
 # El parámetro "name" no se pasa en la solicitud
 def test_create_kit_name_is_not_passed_get_error_response():
+    #kit_body sin parametro name
+    kit_body = {}
     # El resultado de la solicitud para crear un nuevo kit
-    kit_response = sender_stand_request.post_new_client_kit('')
+    kit_response = sender_stand_request.post_new_client_kit(kit_body)
     # Comprueba si el código de estado es 400
     assert kit_response.status_code == 400
     # Comprueba si el atributo "code" en el cuerpo de respuesta es 400
